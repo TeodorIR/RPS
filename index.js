@@ -5,8 +5,20 @@ const you = document.getElementById('you');
 const computer = document.getElementById('computer');
 const result = document.getElementById('result');
 const winner = document.getElementById('winner');
+const score = document.getElementById('score');
+const reset = document.getElementById('reset');
+
 let playerValue = null;
 let computerValue = null;
+
+let wins = parseInt(localStorage.getItem('wins')) || 0;
+let losses = parseInt(localStorage.getItem('losses')) || 0;
+
+const updateScoreboard = () => {
+  score.innerHTML = `<p>Nexus won: ${wins} </p><p>Nexus lost: ${losses}</p>`;
+  localStorage.setItem('wins', wins);
+  localStorage.setItem('losses', losses);
+};
 
 function random() {
   return Math.floor(Math.random() * 3) + 1;
@@ -51,24 +63,41 @@ function results() {
   ) {
     winner.textContent = 'YOU WIN!';
     winner.style.color = 'green';
+    wins++;
   } else {
     winner.textContent = 'YOU LOSE!';
     winner.style.color = 'red';
+    losses++;
   }
 }
+
+reset.addEventListener('click', () => {
+  wins = 0;
+  losses = 0;
+  winner.textContent = '?';
+  winner.style.color = 'aliceblue';
+  you.textContent = 'You:';
+  computer.textContent = 'Computer:';
+  updateScoreboard();
+});
 
 rock.addEventListener('click', () => {
   rockClick();
   computerChoice();
   results();
+  updateScoreboard();
 });
 paper.addEventListener('click', () => {
   paperClick();
   computerChoice();
   results();
+  updateScoreboard();
 });
 scissors.addEventListener('click', () => {
   scissorsClick();
   computerChoice();
   results();
+  updateScoreboard();
 });
+
+updateScoreboard();
