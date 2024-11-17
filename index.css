@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(40, 35, 40);
+  background-color: rgb(66, 63, 66);
 }
 
 .game {
@@ -19,16 +19,27 @@ body {
 }
 
 .box {
-  border: 2px solid black;
+  background-color: rgb(25, 25, 25);
+  border: 2px solid rgb(16, 15, 15);
   border-radius: 20px;
   height: 80%;
   width: 90%;
+}
+
+.box p {
+  text-align: center;
+  color: aliceblue;
+  font-size: 20px;
+  padding-top: 10px;
+  box-sizing: border-box;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
+  box-sizing: border-box;
 }
 
 button {
@@ -38,34 +49,33 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  color: black;
 }
 
 .details {
-  margin-top: 40%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.details p {
+.details > p {
   color: aliceblue;
-}
-
-#you {
-  margin-left: 10px;
-}
-
-#computer {
-  margin-left: 10px;
+  text-align: start;
+  box-sizing: border-box;
+  padding-left: 10px;
 }
 
 .results {
   text-align: center;
+  padding-top: 50px;
 }
 
-.win {
+#winner {
   margin: 0;
-  padding: 0;
+  padding-top: 20px;
+  box-sizing: border-box;
   text-align: center;
   font-size: 50px;
 }
