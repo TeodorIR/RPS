@@ -69,17 +69,13 @@ button {
 
 .results {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 #winner {
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 0 50px 0;
   box-sizing: border-box;
   text-align: center;
   font-size: 50px;
-}
-
-p {
-  display: block;
 }
