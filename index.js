@@ -7,6 +7,9 @@ const result = document.getElementById('result');
 const winner = document.getElementById('winner');
 const score = document.getElementById('score');
 const reset = document.getElementById('reset');
+const malph = document.getElementById('malph');
+const amumu = document.getElementById('amumu');
+const gwen = document.getElementById('gwen');
 
 let playerValue = null;
 let computerValue = null;
@@ -61,12 +64,10 @@ function results() {
     (playerValue === 2 && computerValue === 1) ||
     (playerValue === 3 && computerValue === 2)
   ) {
-    winner.textContent = 'YOU WIN!';
-    winner.style.color = 'green';
+    winner.innerHTML = '<img src="League of Legends Victory.png" alt="" />';
     wins++;
   } else {
-    winner.textContent = 'YOU LOSE!';
-    winner.style.color = 'red';
+    winner.innerHTML = '<img src="League of Legends Victory (1).png" alt="" />';
     losses++;
   }
 }
@@ -86,18 +87,21 @@ rock.addEventListener('click', () => {
   computerChoice();
   results();
   updateScoreboard();
+  malph.play();
 });
 paper.addEventListener('click', () => {
   paperClick();
   computerChoice();
   results();
   updateScoreboard();
+  amumu.play();
 });
 scissors.addEventListener('click', () => {
   scissorsClick();
   computerChoice();
   results();
   updateScoreboard();
+  gwen.play();
 });
 
 updateScoreboard();
