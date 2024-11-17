@@ -1,3 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(40, 35, 40);
+}
+
+.game {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game .name {
+  color: aliceblue;
+  font-size: 30px;
+}
+
+.box {
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 80%;
+  width: 90%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 10px 10px;
+  height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details {
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details p {
+  color: aliceblue;
+}
+
+#you {
+  margin-left: 10px;
+}
+
+#computer {
+  margin-left: 10px;
+}
+
+.results {
+  text-align: center;
+}
+
+.win {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 50px;
+}
+
 p {
   display: block;
 }

@@ -4,6 +4,7 @@ const scissors = document.getElementById('scissors');
 const you = document.getElementById('you');
 const computer = document.getElementById('computer');
 const result = document.getElementById('result');
+const winner = document.getElementById('winner');
 let playerValue = null;
 let computerValue = null;
 
@@ -41,15 +42,18 @@ function computerChoice() {
 }
 function results() {
   if (playerValue === computerValue) {
-    result.textContent = 'Result: TIE';
+    winner.textContent = 'TIE';
+    winner.style.color = 'aliceblue';
   } else if (
     (playerValue === 1 && computerValue === 3) ||
     (playerValue === 2 && computerValue === 1) ||
     (playerValue === 3 && computerValue === 2)
   ) {
-    result.textContent = 'Result: YOU WIN!';
+    winner.textContent = 'YOU WIN!';
+    winner.style.color = 'green';
   } else {
-    result.textContent = 'Result: YOU LOSE!';
+    winner.textContent = 'YOU LOSE!';
+    winner.style.color = 'red';
   }
 }
 
